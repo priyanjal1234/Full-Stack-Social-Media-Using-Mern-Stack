@@ -27,7 +27,7 @@ function HomeHero({ query2 }) {
   }
 
   function handleShare(id, index) {
-    setSelectedPostUrl(`http://localhost:5173/post/${id}`);
+    setSelectedPostUrl(`https://full-stack-social-media-using-mern-stack-4sb5.onrender.com/post/${id}`);
     let newshowShareOptions = [...showShareOptions];
     newshowShareOptions[index] = true;
     setShowShareOptions(newshowShareOptions);
