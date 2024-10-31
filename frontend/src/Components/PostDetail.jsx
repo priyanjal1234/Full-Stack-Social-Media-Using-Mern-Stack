@@ -11,7 +11,7 @@ function PostDetail() {
   let { allPosts } = useSelector((state) => state.post);
   let post =
     allPosts &&
-    allPosts.filter((post) => post && post._id === id.toString())[0];
+    allPosts.filter((post) => post._id === id.toString())[0];
 
   return (
     <div className="w-full h-screen bg-zinc-900 flex items-center justify-center text-white flex-col gap-5">
