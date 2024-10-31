@@ -16,9 +16,9 @@ function Home() {
             let getLoggedinUserRes = await fetchLoggedinUser()
             dispatch(setUser(getLoggedinUserRes.data))
         }
-        setInterval(() => {
+    
             getLoggedinUser()
-        }, 1000);
+   
     },[])
 
     let query2 = useQuery({
