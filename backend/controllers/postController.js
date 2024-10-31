@@ -78,3 +78,20 @@ module.exports.deletePostController = async function (req, res) {
     res.status(500).json({ errorMessage: error.message });
   }
 };
+
+
+module.exports.getSpecificPostController = async function(req,res) {
+  try{
+     let post = await postModel.findOne({_id: req.params.id}) 
+    res.status(200).json(post)
+  }
+  catch(error){
+    res.status(500).json({errorMessage: error.message})
+  }
+}
+
+
+
+
+
+
