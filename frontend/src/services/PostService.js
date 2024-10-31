@@ -62,7 +62,7 @@ export const deletePost = async function (id) {
 
 export const getPost = async function (id) {
   try {
-    let getPostRes = await api.get(`/posts/specific/${id}`, {
+    let getPostRes = await api.get(`/posts/specific/post/${id}`, {
       withCredentials: true,
     });
     return getPostRes;
