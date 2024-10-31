@@ -25,7 +25,7 @@ module.exports.registerController = async function (req, res) {
     });
     await sendVerificationEmail(email, verificationCode);
     let token = jwt.sign({ name, username, email }, process.env.JWT_KEY);
-    res.cookie("token", token, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true, secure: process.env.NODE_ENV === "Production", sameSite: 'strict' });
+    res.cookie("token", token, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true, secure: process.env.NODE_ENV === "Production", sameSite: 'None' });
     res
       .status(201)
       .json({ message: "Registration Successful. Verification email sent." });
@@ -61,7 +61,7 @@ module.exports.loginController = async function (req, res) {
           { email, name: user.name, username: user.username },
           process.env.JWT_KEY
         );
-        res.cookie("token", token, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true, secure: process.env.NODE_ENV === "Production", sameSite: 'strict' });
+        res.cookie("token", token, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true, secure: process.env.NODE_ENV === "Production", sameSite: 'None' });
         return res.status(200).json({ message: "You are logged in" });
       } else {
         return res.status(401).json({ message: "Invalid Password" });
