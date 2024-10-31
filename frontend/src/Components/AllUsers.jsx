@@ -6,8 +6,8 @@ import { setAllUsers } from "../redux/reducers/UserReducer";
 import { Link } from "react-router-dom";
 
 function AllUsers() {
-  let { allUsers } = useSelector((state) => state.user);
-  let { user } = useSelector((state) => state.user);
+  let { allUsers,user } = useSelector((state) => state.user);
+
   let dispatch = useDispatch();
 
   useEffect(() => {
