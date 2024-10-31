@@ -57,3 +57,22 @@ export const deletePost = async function (id) {
     }
   }
 };
+
+
+
+export const getPost = async function (id) {
+  try {
+    let getPostRes = await api.get(`/posts/specific/${id}`, {
+      withCredentials: true,
+    });
+    return getPostRes;
+  } catch (error) {
+    if(error.response && error.response.status === 500) {
+      console.log("Error fetching post")
+    }
+  }
+};
+
+
+
+
