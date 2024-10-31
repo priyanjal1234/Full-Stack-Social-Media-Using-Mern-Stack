@@ -10,6 +10,8 @@ import { setAllPosts } from '../redux/reducers/PostReducer'
 
 function Home() {
     let dispatch = useDispatch()
+
+    let {user} = useSelector(state => state.user)
     
     useEffect(() => {
         async function getLoggedinUser() {
@@ -19,7 +21,7 @@ function Home() {
     
             getLoggedinUser()
    
-    },[])
+    },[user])
 
     let query2 = useQuery({
         queryKey: ['allPosts'],
