@@ -9,6 +9,9 @@ function PostDetail() {
   let { id } = useParams();
   let { user } = useSelector((state) => state.user);
   let { allPosts } = useSelector((state) => state.post);
+
+  console.log(allPosts)
+  
   let post =
     allPosts &&
     allPosts.filter((post) => post._id === id.toString())[0];
