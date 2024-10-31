@@ -15,10 +15,10 @@ function AllUsers() {
       let fetchAllUsersRes = await getAllUsers();
       dispatch(setAllUsers(fetchAllUsersRes.data));
     }
-    setInterval(() => {
+    
         fetchAllUsers()
-    }, 1000);
-  }, []);
+    
+  }, [allUsers]);
 
   async function handleFollow(id) {
     await followUser(id);
