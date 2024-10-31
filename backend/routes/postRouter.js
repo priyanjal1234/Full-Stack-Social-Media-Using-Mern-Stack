@@ -19,6 +19,5 @@ router.post("/post/like/:id",isLoggedin,likePostController)
 
 router.delete("/delete/:id",isLoggedin,deletePostController)
 
-router.get("/specific/post/:id",isLoggedin,getSpecificPostController)
 
 module.exports = router;
