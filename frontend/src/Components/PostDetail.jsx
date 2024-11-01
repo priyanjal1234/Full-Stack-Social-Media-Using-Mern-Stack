@@ -1,6 +1,6 @@
-function PostData() {
+function PostDetail() {
   return <h1>Hello</h1>
 }
 
 
-export default PostData
+export default PostDetail
